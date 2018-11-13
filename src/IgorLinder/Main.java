@@ -12,19 +12,34 @@ public class Main {
 	
 	public void initializing() {
 		System.out.println("Source Array:");
-		array = getRandomIntegerArray(100);
+		array = getRandomIntegerArray(10000);
 		sortSelection = new SortSelection(array);
 		printArray();
 	}
 	
 	public void SortingAlgorithms() {
-		/*Sorting selection = sortSelection.getSort(TypeSort.SELECTION);*/
-		
-		Thread selection = new Thread(sortSelection.getSort(TypeSort.SELECTION)); 
-				selection.start();
 				
-		Thread insertion = new Thread(sortSelection.getSort(TypeSort.INSERTION));
-				insertion.start();
+		Sorting selection = sortSelection.getSort(TypeSort.SELECTION); 
+		Thread selection_thread = new Thread(selection); 
+				selection_thread.start();
+			
+		Sorting insertion = sortSelection.getSort(TypeSort.INSERTION);
+		Thread insertion_thread = new Thread(insertion);
+				insertion_thread.start();
+				
+		try {
+			selection_thread.join();
+			insertion_thread.join();
+		} catch (InterruptedException e) {
+			e.getMessage();
+		}
+		
+		
+		
+		//проверка (в этом потоке выполняется последовательно)
+		System.out.print("\n - - - - - - - - - - Result - - - - - - - - - - ");
+			//printArray(selection);
+			//printArray(insertion);
 	}
 		
 	public static void main(String[] args) {
@@ -52,11 +67,23 @@ public class Main {
 			arr[i] = rand.nextInt(n+1);
 		return arr;
 	}
-			
+	private void printArray(Sorting obj) {
+		System.out.print("\nResult: " + obj.getName());
+		printArray(obj.getArray());
+	}
+	
 	private <T> void printArray() {
 		printArray(array);
 	}
-		
+			
+	private void printArray(int[] arr) {
+		System.out.println();
+		Integer[] intArr = new Integer[arr.length]; 
+		for (int i = 0; i < arr.length; i++) 
+			intArr[i] = Integer.valueOf(arr[i]);
+		printArray(intArr);
+	}
+	 
 	private <T> void printArray(T[] arr) 
 	{
 		int newStrCount = 0;
