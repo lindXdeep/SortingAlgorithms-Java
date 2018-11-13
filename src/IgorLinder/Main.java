@@ -14,7 +14,7 @@ public class Main {
 		System.out.println("Source Array:");
 		array = getRandomIntegerArray(10000);
 		sortSelection = new SortSelection(array);
-		printArray();
+		//printArray();
 	}
 	
 	public void SortingAlgorithms() {
@@ -33,11 +33,12 @@ public class Main {
 		} catch (InterruptedException e) {
 			e.getMessage();
 		}
-		
-		
+			
 		
 		//проверка (в этом потоке выполняется последовательно)
-		System.out.print("\n - - - - - - - - - - Result - - - - - - - - - - ");
+		System.out.print("\n - - - - - - - - - - Result - - - - - - - - - - \n");
+			printArray(checkSequence(selection));
+			printArray(checkSequence(insertion));
 			//printArray(selection);
 			//printArray(insertion);
 	}
@@ -67,11 +68,32 @@ public class Main {
 			arr[i] = rand.nextInt(n+1);
 		return arr;
 	}
+	
+	public static boolean checkSequence(Sorting obj) {
+		System.out.print("\nResult: " + obj.getName());
+				
+		for (int i : obj.getArray()) 
+		{
+			if(i > i+1 )
+				return false;
+		} 
+		return true;
+	}
+	
+	public void printArray(boolean t ) {
+		if(t == true)
+			System.out.println(" Array sorted correctly!");
+		else
+			System.err.println(" Array not sorted...!");
+	}
+	
+	@SuppressWarnings("unused")
 	private void printArray(Sorting obj) {
 		System.out.print("\nResult: " + obj.getName());
 		printArray(obj.getArray());
 	}
 	
+	@SuppressWarnings("unused")
 	private <T> void printArray() {
 		printArray(array);
 	}

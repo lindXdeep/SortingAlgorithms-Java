@@ -10,15 +10,15 @@ public class Selection extends ArchetypeSort {
 
 	@Override
 	public void run() {
-		System.out.println(Thread.currentThread().getName() + ".start -> " + super.nameSort + ": ");
+		analize.start(super.nameSort);
 	
-		for (int i = 0; i < size; i++) {
-			for (int j = i+1; j < size; j++) {
+		for (int i = 0; i < size; i++) {			//Итерации
+			for (int j = i+1; j < size; j++) {		//Диапазон просматриваемых значений сокращается с каждой итерации
 				if(array[i] > array[j])
 					swap(i,j);
 			}
 		}
 				
-		System.out.println(Thread.currentThread().getName() + ".stop -> " + super.nameSort + ". ");
+		analize.stop();
 	}
 }

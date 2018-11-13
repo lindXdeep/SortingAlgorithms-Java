@@ -6,6 +6,7 @@ public abstract class ArchetypeSort implements Sorting{
 	protected String nameSort;
 	protected int size;
 	protected int[] array;
+	protected Analize analize = new Analize();
 	
 	public ArchetypeSort(int[] arr, String name) {
 		this.nameSort = new String(new StringBuffer(name));
