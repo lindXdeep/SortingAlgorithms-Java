@@ -3,7 +3,7 @@ package IgorLinder;
 
 public abstract class ArchetypeSort implements Sorting{
 	
-	protected String nameSort;
+	public String nameSort;
 	protected int size;
 	protected int[] array;
 	protected Analize analize = new Analize();
@@ -16,11 +16,13 @@ public abstract class ArchetypeSort implements Sorting{
 		for (int i = 0; i < size; i++)
 			this.array[i] = arr[i];
 	}
-	
+		
 	public void swap(int a, int b) {
 		int temp = array[a];
 		array[a] =  array[b];
 		array[b] = temp;
+		
+		analize.compare();
 	}
 
 	@Override
@@ -32,4 +34,5 @@ public abstract class ArchetypeSort implements Sorting{
 	public String getName() {
 		return nameSort;
 	}
+	
 }

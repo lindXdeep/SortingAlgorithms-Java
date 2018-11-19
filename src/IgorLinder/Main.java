@@ -4,15 +4,16 @@ import java.util.Random;
 
 public class Main {
 	
-	private static Integer[] array;
+	private static int[] array;
 	private static SortSelection sortSelection;
 	
 	public Main() {
+				
 	}
 	
 	public void initializing() {
 		System.out.println("Source Array:");
-		array = getRandomIntegerArray(10000);
+		array = getRandomintArray(10);
 		sortSelection = new SortSelection(array);
 		//printArray();
 	}
@@ -26,10 +27,16 @@ public class Main {
 		Sorting insertion = sortSelection.getSort(TypeSort.INSERTION);
 		Thread insertion_thread = new Thread(insertion);
 				insertion_thread.start();
+		
+		Sorting bubble = sortSelection.getSort(TypeSort.BUBBLE);
+		Thread bubble_thread = new Thread(bubble);
+				bubble_thread.start();
+				
 				
 		try {
 			selection_thread.join();
 			insertion_thread.join();
+			bubble_thread.join(); 
 		} catch (InterruptedException e) {
 			e.getMessage();
 		}
@@ -39,8 +46,10 @@ public class Main {
 		System.out.print("\n - - - - - - - - - - Result - - - - - - - - - - \n");
 			printArray(checkSequence(selection));
 			printArray(checkSequence(insertion));
-			//printArray(selection);
-			//printArray(insertion);
+			printArray(checkSequence(bubble));
+//			printArray(selection);
+//			printArray(insertion);
+//			printArray(bubble);
 	}
 		
 	public static void main(String[] args) {
@@ -60,9 +69,9 @@ public class Main {
 	}
 	
 	
-	private Integer[] getRandomIntegerArray(Integer n) {
+	private int[] getRandomintArray(int n) {
 		Random rand = new Random();
-		Integer[] arr = new Integer[n];
+		int[] arr = new int[n];
 		
 		for (int i = 0; i < arr.length; i++) 
 			arr[i] = rand.nextInt(n+1);
@@ -71,22 +80,24 @@ public class Main {
 	
 	public static boolean checkSequence(Sorting obj) {
 		System.out.print("\nResult: " + obj.getName());
-				
-		for (int i : obj.getArray()) 
-		{
-			if(i > i+1 )
+		
+		int arr[] = obj.getArray();
+		
+		for (int i = 0; i < arr.length-1; i++) {
+			if(arr[i] > arr[i+1] )
 				return false;
-		} 
+		}
 		return true;
 	}
 	
 	public void printArray(boolean t ) {
 		if(t == true)
-			System.out.println(" Array sorted correctly!");
+			System.out.println(" -> Array sorted correctly!");
 		else
-			System.err.println(" Array not sorted...!");
+			System.err.println(" -> Array not sorted...!");
 	}
 	
+
 	@SuppressWarnings("unused")
 	private void printArray(Sorting obj) {
 		System.out.print("\nResult: " + obj.getName());
@@ -97,16 +108,8 @@ public class Main {
 	private <T> void printArray() {
 		printArray(array);
 	}
-			
-	private void printArray(int[] arr) {
-		System.out.println();
-		Integer[] intArr = new Integer[arr.length]; 
-		for (int i = 0; i < arr.length; i++) 
-			intArr[i] = Integer.valueOf(arr[i]);
-		printArray(intArr);
-	}
-	 
-	private <T> void printArray(T[] arr) 
+ 
+	private void printArray(int[] arr) 
 	{
 		int newStrCount = 0;
 		int size = arr.length;

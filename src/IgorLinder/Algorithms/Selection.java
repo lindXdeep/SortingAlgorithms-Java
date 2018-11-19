@@ -12,8 +12,12 @@ public class Selection extends ArchetypeSort {
 	public void run() {
 		analize.start(super.nameSort);
 	
-		for (int i = 0; i < size; i++) {			//Итерации
-			for (int j = i+1; j < size; j++) {		//Диапазон просматриваемых значений сокращается с каждой итерации
+		for (int i = 0; i < size-1; i++)			//Итерации
+		{											
+			analize.step();
+			for (int j = i+1; j < size; j++)		//Диапазон просматриваемых значений сокращается с каждой итерации
+			{										
+				analize.cycle();
 				if(array[i] > array[j])
 					swap(i,j);
 			}

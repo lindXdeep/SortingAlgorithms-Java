@@ -11,6 +11,12 @@ public enum TypeSort{
 		public String nameSort() {
 			return "Insertion Sorting"; 
 		}
+	},
+	
+	BUBBLE {
+		public String nameSort() {
+			return "Bubble Sorting"; 
+		}
 	};
 	
 	public abstract String nameSort();
