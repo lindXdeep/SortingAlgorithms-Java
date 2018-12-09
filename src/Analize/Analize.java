@@ -1,4 +1,4 @@
-package IgorLinder;
+package Analize;
 
 public class Analize {
 	private String name;			// Название анализируемого алгоритма

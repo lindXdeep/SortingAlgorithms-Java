@@ -1,6 +1,5 @@
-package IgorLinder;
-
 import java.util.Random;
+import Sort.*;
 
 public class Main {
 	

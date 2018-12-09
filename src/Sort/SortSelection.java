@@ -1,6 +1,6 @@
-package IgorLinder;
+package Sort;
 
-import IgorLinder.Algorithms.*;
+import Algorithms.*;
 
 public class SortSelection {
 	

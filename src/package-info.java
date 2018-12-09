@@ -2,17 +2,3 @@
  * @author LindXdeep
  *
  */
-package IgorLinder;
-
-/*
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * */
-

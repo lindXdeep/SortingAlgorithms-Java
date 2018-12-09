@@ -1,5 +1,4 @@
-package IgorLinder;
-
+package Analize;
 
 // стек резльтатов
 public final class DataResults

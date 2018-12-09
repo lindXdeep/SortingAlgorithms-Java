@@ -1,4 +1,6 @@
-package IgorLinder;
+package Sort;
+import Analize.Analize;
+
 //При добавлении нового алгоритма тут ничегон е трогаем
 
 public abstract class ArchetypeSort implements Sorting{

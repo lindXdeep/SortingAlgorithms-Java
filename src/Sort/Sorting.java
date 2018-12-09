@@ -1,4 +1,4 @@
-package IgorLinder;
+package Sort;
 
 public interface Sorting extends Runnable {
 	public int[] getArray();

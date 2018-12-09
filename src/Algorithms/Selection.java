@@ -1,6 +1,6 @@
-package IgorLinder.Algorithms;
+package Algorithms;
 
-import IgorLinder.ArchetypeSort;
+import Sort.*;
 
 public class Selection extends ArchetypeSort {
 	

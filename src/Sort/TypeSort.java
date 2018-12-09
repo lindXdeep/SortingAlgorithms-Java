@@ -1,4 +1,4 @@
-package IgorLinder;
+package Sort;
 
 public enum TypeSort{
 	SELECTION {
