@@ -2,15 +2,15 @@ package IgorLinder;
 
 public class DataUnit {
 	
-	private String name;			// Название структуры данных
+	private String name;			
 	
-	private long time;				// итоговое время работы алгоритма
-	private long usedBytes;			// текущее количество используемой памяти
+	private long time;				
+	private long usedBytes;			
 		
-	private int steps;				// Количество шагов
-	private int cycles;				// Количество циклов в каждом шаге
-	private int compares;			// Количество операций сравнения
-	private int iterations;			// Всего итераций
+	private int steps;				
+	private int cycles;				
+	private int compares;			
+	private int iterations;			
 		
 	{
 		name = new String();
@@ -67,7 +67,7 @@ public class DataUnit {
 
 
 
-//Отображение времени		
+		
 //if(stopTime <= 1000)
 //	System.out.printf("\tTime: %d ms\n", stopTime);
 //else if(stopTime > 1000 && stopTime < 1000*60)
@@ -76,7 +76,7 @@ public class DataUnit {
 //	System.out.printf("\tTime: %2.2f min\n", (double)stopTime/1000/60);
 //
 
-//Отображение байт	
+
 //if(usedBytes < (1024*1024*1024 ))
 //	System.out.printf("\tUsed current memory: %3.2f mb\n", (double) usedBytes/(1024*1024));
 //else if(usedBytes > 1024*1024*1024)

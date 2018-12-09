@@ -1,5 +1,5 @@
 package IgorLinder;
-//При добавлении нового алгоритма тут ничегон е трогаем
+//РџСЂРё РґРѕР±Р°РІР»РµРЅРёРё РЅРѕРІРѕРіРѕ Р°Р»РіРѕСЂРёС‚РјР° С‚СѓС‚ РЅРёС‡РµРіРѕРЅ Рµ С‚СЂРѕРіР°РµРј
 
 public abstract class ArchetypeSort implements Sorting{
 	
@@ -19,7 +19,7 @@ public abstract class ArchetypeSort implements Sorting{
 		
 	public void swap(int a, int b) {
 		int temp = array[a];
-		array[a] =  array[b];
+		array[a] = array[b];
 		array[b] = temp;
 		
 		analize.compare();

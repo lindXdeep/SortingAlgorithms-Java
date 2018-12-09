@@ -1,7 +1,7 @@
 package IgorLinder;
 
 
-// стек резльтатов
+// СЃС‚РµРє СЂРµР·Р»СЊС‚Р°С‚РѕРІ
 public final class DataResults
 {
 	private int iter = 0;

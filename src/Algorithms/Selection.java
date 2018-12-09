@@ -12,10 +12,10 @@ public class Selection extends ArchetypeSort {
 	public void run() {
 		analize.start(super.nameSort);
 	
-		for (int i = 0; i < size-1; i++)			//Èòåðàöèè
+		for (int i = 0; i < size-1; i++)			//Ð˜Ñ‚ÐµÑ€Ð°Ñ†Ð¸Ð¸
 		{											
 			analize.step();
-			for (int j = i+1; j < size; j++)		//Äèàïàçîí ïðîñìàòðèâàåìûõ çíà÷åíèé ñîêðàùàåòñÿ ñ êàæäîé èòåðàöèè
+			for (int j = i+1; j < size; j++)		//Ð”Ð¸Ð°Ð¿Ð°Ð·Ð¾Ð½ Ð¿Ñ€Ð¾ÑÐ¼Ð°Ñ‚Ñ€Ð¸Ð²Ð°ÐµÐ¼Ñ‹Ñ… Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¹ ÑÐ¾ÐºÑ€Ð°Ñ‰Ð°ÐµÑ‚ÑÑ Ñ ÐºÐ°Ð¶Ð´Ð¾Ð¹ Ð¸Ñ‚ÐµÑ€Ð°Ñ†Ð¸Ð¸
 			{										
 				analize.cycle();
 				if(array[i] > array[j])

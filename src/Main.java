@@ -42,7 +42,7 @@ public class Main {
 		}
 			
 		
-		//проверка (в этом потоке выполняется последовательно)
+		//РїСЂРѕРІРµСЂРєР° (РІ СЌС‚РѕРј РїРѕС‚РѕРєРµ РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕ)
 		System.out.print("\n - - - - - - - - - - Result - - - - - - - - - - \n");
 			printArray(checkSequence(selection));
 			printArray(checkSequence(insertion));
