@@ -26,7 +26,7 @@ public class DataUnit {
 	}
 	
 	public DataUnit(DataUnit unit) {
-		this.name = name;
+		
 	}
 	
 	public void setName(String name){
@@ -50,7 +50,11 @@ public class DataUnit {
 	public void setMemory(long bytes) {
 		this.usedBytes = bytes;
 	}
-		
+	
+	public int getName(){
+		return this.name;
+	}
+
 	public int getSteps(){
 		return steps;
 	}

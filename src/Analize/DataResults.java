@@ -4,14 +4,14 @@ package Analize;
 public final class DataResults
 {
 	private int iter = 0;
-	DataUnit[] stackUnits =  null;
+	public DataUnit[] stackUnits =  null;
 		
 	private static DataResults instance =  null;
 	private DataResults() {}
 	
 	public static DataResults getInstance()
 	{
-		if(instance ==null)
+		if(instance == null)
 			instance = new DataResults();
 		
 		return instance;
@@ -20,7 +20,7 @@ public final class DataResults
 	public void push(DataUnit unit) {
 		
 		if(this.stackUnits == null)
-			this.stackUnits = new DataUnit[1];
+			this.stackUnits = new DataUnit[10];
 		
 		this.stackUnits[iter++] = new DataUnit(unit);
 		

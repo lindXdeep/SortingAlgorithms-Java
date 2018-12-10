@@ -10,6 +10,7 @@ public class Bubble extends ArchetypeSort{
 
 	@Override
 	public void run() {
+		
 		analize.start(super.nameSort);
 			
 		for (int i = 0; i < array.length; i++)

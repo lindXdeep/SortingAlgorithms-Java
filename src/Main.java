@@ -1,4 +1,6 @@
 import java.util.Random;
+
+import Analize.DataResults;
 import Sort.*;
 
 public class Main {
@@ -40,15 +42,18 @@ public class Main {
 			e.getMessage();
 		}
 			
-		
+		System.out.println( DataResults.getInstance().stackUnits[1].getName() );
+		System.out.println( DataResults.getInstance().stackUnits[1].getIterations() );
+
+
 		//проверка (в этом потоке выполняется последовательно)
 		System.out.print("\n - - - - - - - - - - Result - - - - - - - - - - \n");
 			printArray(checkSequence(selection));
 			printArray(checkSequence(insertion));
 			printArray(checkSequence(bubble));
-//			printArray(selection);
-//			printArray(insertion);
-//			printArray(bubble);
+			printArray(selection);
+			printArray(insertion);
+			printArray(bubble);
 	}
 		
 	public static void main(String[] args) {
@@ -96,10 +101,9 @@ public class Main {
 			System.err.println(" -> Array not sorted...!");
 	}
 	
-
 	@SuppressWarnings("unused")
 	private void printArray(Sorting obj) {
-		System.out.print("\nResult: " + obj.getName());
+		System.out.print("\nResult: [" + obj.getName() + "]: \t");
 		printArray(obj.getArray());
 	}
 	
@@ -108,8 +112,7 @@ public class Main {
 		printArray(array);
 	}
  
-	private void printArray(int[] arr) 
-	{
+	private void printArray(int[] arr)	{
 		int newStrCount = 0;
 		int size = arr.length;
 				
